@@ -1,6 +1,13 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
+import './styles/headerStyle.scss'
+import './styles/BlogStyle.scss'
+import './styles/InternoHomeStyle.scss'
+import './styles/ProjectStyle.scss'
+import './styles/BlogDetailsStyle.scss'
+import './styles/OurProjectStyle.scss'
+import './styles/footerStyle.scss'
 import store from './store'
+import router from './router'
 
-createApp(App).use(store).use(router).mount('#app')
+createApp(App).use(router).use(store).mount('#app')

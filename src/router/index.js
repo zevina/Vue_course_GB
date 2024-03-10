@@ -1,25 +1,46 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHistory } from "vue-router";
+import HomePage from "@/pages/HomePage.vue";
+import ProjectPage from "@/pages/ProjectPage.vue";
+import OurProject from "@/pages/OurProject.vue";
+import BlogPage from "@/pages/BlogPage.vue";
+import BlogDetailsPage from "@/pages/BlogDetailsPage.vue";
+import Error from "@/pages/Error.vue";
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
-]
+export default createRouter(
+    {
+      history: createWebHistory(process.env.BASE_URL),
+      routes: [
+        {
+          path: "/",
+          name: "homepage",
+          component: HomePage,
+        },
 
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
-})
-
-export default router
+        {
+          path: "/Project",
+          name: "projectpage",
+          component: ProjectPage,
+        },
+        {
+          path: "/OurProject",
+          name: "ourproject",
+          component: OurProject,
+        },
+        {
+          path: "/Blog",
+          name: "blogpage",
+          component: BlogPage,
+        },
+        {
+          path: "/BlogDetails",
+          name: "blogdetailspage",
+          component: BlogDetailsPage,
+        },
+        {
+          path: '/:CatchAll(.*)',
+          name: '404',
+          component: Error
+        }
+      ]
+    }
+)

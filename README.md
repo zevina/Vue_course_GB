@@ -1,5 +1,7 @@
 # vue_course_gb
 
+![plot](./src/assets/img/Homepage.png)
+
 ## Project setup
 ```
 npm install
